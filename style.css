@@ -1,14 +1,15 @@
 @font-face {
-    font-family: 'Baskervville';
-    src: url(./fonts/Baskervville_SC/BaskervvilleSC-Regular.ttf);
+  font-family: "Baskervville";
+  src: url(./fonts/Baskervville_SC/BaskervvilleSC-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'Cedarville';
-    src: url(./fonts/Cedarville_Cursive/CedarvilleCursive-Regular.ttf);
+  font-family: "Cedarville";
+  src: url(./fonts/Cedarville_Cursive/CedarvilleCursive-Regular.ttf);
 }
 
 html {
+  position: relative;
   --main-color: #a3e635;
   --secondary-color: #f7fee7;
   --third-color: #ecfccb;
@@ -28,8 +29,8 @@ header {
   width: 100%;
   height: calc(90rem / 16);
   background-color: var(--main-color);
-  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
-  font-family: 'Baskervville';
+  box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
+  font-family: "Baskervville";
   font-size: calc(70rem / 16);
   color: var(--text-primary-color);
   text-align: center;
@@ -43,22 +44,21 @@ span {
 }
 
 button.new-book {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   width: calc(80rem / 16);
   height: calc(80rem / 16);
-  bottom: calc(50rem / 16);
-  right: calc(50rem / 16);
+  bottom: calc(40rem / 16);
+  right: calc(40rem / 16);
   border: solid 1px transparent;
   border-radius: 70%;
   background-color: var(--main-color);
   text-align: center;
-  font-family: 'Baskervville';
+  font-family: "Baskervville";
   font-size: calc(20rem / 16);
 
-  > .add-book-button{
-
+  > .add-book-button {
     width: calc(40rem / 16);
     height: calc(80rem / 16);
   }
@@ -73,17 +73,14 @@ dialog {
   padding: 0;
 
   & > div {
-
     display: flex;
 
-    & button{
-
+    & button {
       border: none;
       outline: none;
       background-color: var(--main-color);
 
       & .close-button {
-
         width: calc(35rem / 16);
         margin-right: calc(20rem / 16);
       }
@@ -116,7 +113,7 @@ dialog {
         width: 80px;
       }
 
-      & input[type="text"] {
+      & input[type="text"]{
         margin-left: calc(30rem / 16);
         border: none;
         border-bottom: solid 2px var(--main-color);
@@ -126,18 +123,20 @@ dialog {
         outline: none;
       }
 
-      & input[type="file"] {
-        font-size: calc(20rem / 16);
+      & select,
+      input[type='number'] {
         margin-left: calc(30rem / 16);
       }
+
+
     }
 
     & button {
-        margin-top: 120px;
-        border: solid 1px transparent;
-        border-radius: 50%;
-        background-color: var(--main-color);
-      }
+      margin-top: 120px;
+      border: solid 1px transparent;
+      border-radius: 50%;
+      background-color: var(--main-color);
+    }
   }
 }
 
@@ -159,21 +158,38 @@ dialog {
     border: solid 1px transparent;
     border-radius: 3%;
 
-    & > div > span{
-
-      font-family: 'Baskervville';
+    & > div > span {
+      font-family: "Baskervville";
       font-size: calc(15rem / 16);
 
       > p {
         font-size: calc(20rem / 16);
-        font-family: 'Cedarville';
+        font-family: "Cedarville";
       }
+    }
+
+    & > div:nth-of-type(2) {
+      display: flex;
+      /* justify-content: end; */
+      margin-left: auto;
+      align-items: end;
+      gap: calc(20rem / 16);
+
+      & img[class$="button"] {
+        width: 40px;
+/      }
+    }
+
+    & p.book-status{
+
+      width: calc(200rem / 16);
     }
   }
 }
 
 .image {
-  background-color: red;
+  background-color: var(--main-color);
+  border: none;
   width: 120px;
   height: 200px;
   align-self: center;

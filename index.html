@@ -32,6 +32,10 @@
               <p book-status>Read</p></span
             >
           </div>
+          <div>
+            <img src="./icons/done-icon.svg" alt="done-icon" class="done-button">
+            <img src="./icons/delete-icon.svg" alt="delete-icon" class="delete-button">
+          </div>
         </div>
       </div>
       <button class="new-book"><img src="./icons/book-icon.svg" alt="add-book-button" class="add-book-button"></button>
@@ -59,19 +63,24 @@
 
           <div>
             <label for="pages">Pages: </label>
-            <input type="text" name="pages" id="pages" />
+            <input type="number" name="pages" id="pages" pattern="^\d*$">
           </div>
 
           <div>
             <label for="status">Status: </label>
-            <input type="text" name="status" id="status" />
+           <select name="status" id="status">
+             <option value="Want to Read">Want to Read</option>
+             <option value="Currently Reading">Currently Reading</option>
+             <option value="Read">Read</option>
+           </select>
+
           </div>
 
           <div>
-            <label for="cover">Cover:</label>
-            <input type="file" name="cover" id="cover" />
+            <label for="cover">Cover (URL):</label>
+            <input type="text" name="cover" id="cover" />
           </div>
-          <button>
+          <button class="add-book">
             <img
               src="./icons/check-icon.svg"
               alt="check-button"
